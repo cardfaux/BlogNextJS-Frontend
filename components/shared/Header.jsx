@@ -25,9 +25,9 @@ const Header = () => {
   return (
     <React.Fragment>
       <Navbar color='light' light expand='md'>
-        <Link href='/'>
+        <ActiveLink href='/'>
           <NavLink className='font-weight-bold'>{APP_NAME}</NavLink>
-        </Link>
+        </ActiveLink>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className='ml-auto' navbar>
@@ -47,9 +47,9 @@ const Header = () => {
                   </ActiveLink>
                 </NavItem>
                 <NavItem>
-                  <ActiveLink activeClassName='active' href='/signup'>
+                  <Link activeClassName='active' href='/signup'>
                     <NavLink>Signup</NavLink>
-                  </ActiveLink>
+                  </Link>
                 </NavItem>
               </React.Fragment>
             )}

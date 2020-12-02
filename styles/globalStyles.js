@@ -18,6 +18,9 @@ const GlobalStyle = createGlobalStyle`
   nav.navbar.navbar-expand-md.navbar-light.bg-light a.font-weight-bold.nav-link {
     cursor: pointer;
   }
+  button:focus {
+  outline: none!important;
+}
 `;
 
 export default GlobalStyle;
