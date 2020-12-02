@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
   button:focus {
   outline: none!important;
-}
+  }
 `;
 
 export default GlobalStyle;
