@@ -9,6 +9,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Un
 // import '.././node_modules/nprogress/nprogress.css';
 import '../../node_modules/nprogress/nprogress.css';
 // import Search from './blog/Search';
+import styled from 'styled-components';
 
 Router.onRouteChangeStart = (url) => NProgress.start();
 Router.onRouteChangeComplete = (url) => NProgress.done();
