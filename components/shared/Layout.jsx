@@ -9,7 +9,6 @@ const Layout = (props) => {
       <GlobalStyle />
       <Header />
       {props.children}
-      <p>footer</p>
     </>
   );
 };
