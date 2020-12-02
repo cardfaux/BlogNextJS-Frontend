@@ -9,6 +9,9 @@ const GlobalStyle = createGlobalStyle`
   div.collapse.navbar-collapse ul.ml-auto.navbar-nav li.nav-item {
     cursor: pointer;
   }
+  nav.navbar.navbar-expand-md.navbar-light.bg-light a.font-weight-bold.nav-link {
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyle;

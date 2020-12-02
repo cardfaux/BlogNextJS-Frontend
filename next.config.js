@@ -4,7 +4,9 @@ module.exports = {
   webpack: (config) => {
     return config;
   },
-  env: {
-    HOST: process.env.HOST,
+  publicRuntimeConfig: {
+    APP_NAME: process.env.APP_NAME,
+    API_DEVELOPMENT: process.env.API_DEVELOPMENT,
+    PRODUCTION: process.env.PRODUCTION,
   },
 };
