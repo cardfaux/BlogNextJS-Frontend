@@ -9,6 +9,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Un
 // import '.././node_modules/nprogress/nprogress.css';
 import '../../node_modules/nprogress/nprogress.css';
 // import Search from './blog/Search';
+import ActiveLink from './ActiveLink';
 
 Router.onRouteChangeStart = (url) => NProgress.start();
 Router.onRouteChangeComplete = (url) => NProgress.done();
@@ -32,40 +33,40 @@ const Header = () => {
           <Nav className='ml-auto' navbar>
             <React.Fragment>
               <NavItem>
-                <Link href='/blogs'>
+                <ActiveLink activeClassName='active' href='/blogs'>
                   <NavLink>Blogs</NavLink>
-                </Link>
+                </ActiveLink>
               </NavItem>
             </React.Fragment>
 
             {!isAuth() && (
               <React.Fragment>
                 <NavItem>
-                  <Link href='/signin'>
+                  <ActiveLink activeClassName='active' href='/signin'>
                     <NavLink>Signin</NavLink>
-                  </Link>
+                  </ActiveLink>
                 </NavItem>
                 <NavItem>
-                  <Link href='/signup'>
+                  <ActiveLink activeClassName='active' href='/signup'>
                     <NavLink>Signup</NavLink>
-                  </Link>
+                  </ActiveLink>
                 </NavItem>
               </React.Fragment>
             )}
 
             {isAuth() && isAuth().role === 0 && (
               <NavItem>
-                <Link href='/user'>
+                <ActiveLink activeClassName='active' href='/user'>
                   <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
-                </Link>
+                </ActiveLink>
               </NavItem>
             )}
 
             {isAuth() && isAuth().role === 1 && (
               <NavItem>
-                <Link href='/admin'>
+                <ActiveLink activeClassName='active' href='/admin'>
                   <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
-                </Link>
+                </ActiveLink>
               </NavItem>
             )}
 
