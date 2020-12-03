@@ -1,18 +1,18 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import Layout from '../components/shared/Layout';
 
-const index = () => {
+const Index = () => {
   return (
     <Layout>
-      <Title>This is the index page</Title>
+      <h2>Index page</h2>
+      <Link href='/signup'>
+        <a>Signup</a>
+      </Link>
     </Layout>
   );
 };
 
-export default index;
-
-const Title = styled.h1`
-  color: red;
-`;
+export default Index;
