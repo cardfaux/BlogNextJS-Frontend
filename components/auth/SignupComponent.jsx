@@ -75,12 +75,12 @@ const SignupComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       {showError()}
       {showLoading()}
       {showMessage()}
       {showForm && signupForm()}
-    </React.Fragment>
+    </>
   );
 };
 

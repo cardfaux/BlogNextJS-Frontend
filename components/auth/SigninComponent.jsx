@@ -71,12 +71,12 @@ const SigninComponent = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       {showError()}
       {showLoading()}
       {showMessage()}
       {showForm && signinForm()}
-    </React.Fragment>
+    </>
   );
 };
 
