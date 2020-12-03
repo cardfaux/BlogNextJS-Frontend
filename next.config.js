@@ -7,6 +7,8 @@ module.exports = {
   publicRuntimeConfig: {
     APP_NAME: process.env.APP_NAME,
     API_DEVELOPMENT: process.env.API_DEVELOPMENT,
+    API_PRODUCTION: process.env.API_PRODUCTION,
+    CLIENT_DEVELOPMENT: process.env.CLIENT_DEVELOPMENT,
     PRODUCTION: process.env.PRODUCTION,
   },
 };
