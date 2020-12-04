@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../../components/Layout';
+import Layout from '../../components/shared/Layout';
 import Private from '../../components/auth/Private';
 import Link from 'next/link';
 
