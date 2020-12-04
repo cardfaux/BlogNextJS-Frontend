@@ -112,7 +112,7 @@ const Category = () => {
   );
 
   return (
-    <React.Fragment>
+    <>
       {showSuccess()}
       {showError()}
       {showRemoved()}
@@ -120,7 +120,7 @@ const Category = () => {
         {newCategoryFom()}
         {showCategories()}
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
