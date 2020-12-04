@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import cookie from 'js-cookie';
-import { API_DEVELOPMENT, API } from '../config';
+import { API } from '../config';
 
 export const signup = (user) => {
   return fetch(`${API}/signup`, {

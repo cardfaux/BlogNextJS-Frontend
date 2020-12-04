@@ -6,7 +6,6 @@ import NProgress from 'nprogress';
 import { APP_NAME } from '../../config';
 import { signout, isAuth } from '../../actions/auth';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-// import '.././node_modules/nprogress/nprogress.css';
 import '../../node_modules/nprogress/nprogress.css';
 // import Search from './blog/Search';
 import ActiveLink from './ActiveLink';
