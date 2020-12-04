@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
+import '../node_modules/nprogress/nprogress.css';
 import '../styles/globalStyles.css';
 
 function MyApp({ Component, pageProps }) {
