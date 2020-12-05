@@ -66,7 +66,8 @@ const Tag = () => {
       if (data.error) {
         setValues({ ...values, error: data.error, success: false });
       } else {
-        setValues({ ...values, error: false, success: false, name: '', removed: !removed, reload: !reload });
+        // setValues({ ...values, error: false, success: false, name: '', removed: !removed, reload: !reload });
+        setValues({ ...values, error: false, success: false, name: '', removed: false, reload: !reload });
       }
     });
   };
