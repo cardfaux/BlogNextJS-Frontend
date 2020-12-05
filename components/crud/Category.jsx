@@ -32,10 +32,10 @@ const Category = () => {
   };
 
   const showCategories = () => {
-    return categories.map((c, i) => {
+    return categories.map((category, index) => {
       return (
-        <button onDoubleClick={() => deleteConfirm(c.slug)} title='Double click to delete' key={i} className='btn btn-outline-primary mr-1 ml-1 mt-3'>
-          {c.name}
+        <button onDoubleClick={() => deleteConfirm(category.slug)} title='Double click to delete' key={index} className='btn btn-outline-primary mr-1 ml-1 mt-3'>
+          {category.name}
         </button>
       );
     });
