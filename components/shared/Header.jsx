@@ -7,7 +7,7 @@ import { APP_NAME } from '../../config';
 import { signout, isAuth } from '../../actions/auth';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import '../../node_modules/nprogress/nprogress.css';
-// import Search from './blog/Search';
+import Search from '../blog/Search';
 import ActiveLink from './ActiveLink';
 
 Router.onRouteChangeStart = (url) => NProgress.start();
@@ -79,7 +79,7 @@ const Header = () => {
           </Nav>
         </Collapse>
       </Navbar>
-      {/* <Search /> */}
+      <Search />
     </React.Fragment>
   );
 };
