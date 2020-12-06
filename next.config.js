@@ -11,5 +11,7 @@ module.exports = {
     CLIENT_DEVELOPMENT: process.env.CLIENT_DEVELOPMENT,
     PRODUCTION: process.env.PRODUCTION,
     FB_APP_ID: process.env.FB_APP_ID,
+    DOMAIN_PRODUCTION: process.env.DOMAIN_PRODUCTION,
+    DOMAIN_DEVELOPMENT: process.env.DOMAIN_DEVELOPMENT,
   },
 };
