@@ -5,7 +5,7 @@ import { isAuth } from '../../actions/auth';
 const Private = ({ children }) => {
   useEffect(() => {
     if (!isAuth()) {
-      Router.push('/signin');
+      Router.push('/auth/signin');
     }
   }, []);
   return <React.Fragment>{children}</React.Fragment>;

@@ -41,12 +41,12 @@ const Header = () => {
             {!isAuth() && (
               <React.Fragment>
                 <NavItem>
-                  <ActiveLink activeClassName='active' href='/signin'>
+                  <ActiveLink activeClassName='active' href='/auth/signin'>
                     <NavLink>Signin</NavLink>
                   </ActiveLink>
                 </NavItem>
                 <NavItem>
-                  <Link activeClassName='active' href='/signup'>
+                  <Link activeClassName='active' href='/auth/signup'>
                     <NavLink>Signup</NavLink>
                   </Link>
                 </NavItem>
@@ -71,7 +71,7 @@ const Header = () => {
 
             {isAuth() && (
               <NavItem>
-                <NavLink style={{ cursor: 'pointer' }} onClick={() => signout(() => Router.replace(`/signin`))}>
+                <NavLink style={{ cursor: 'pointer' }} onClick={() => signout(() => Router.replace(`/auth/signin`))}>
                   Signout
                 </NavLink>
               </NavItem>
