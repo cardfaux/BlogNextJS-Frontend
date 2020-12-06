@@ -207,7 +207,7 @@ const CreateBlog = ({ router }) => {
               <h5>Featured image</h5>
               <hr />
 
-              <small className='text-muted'>Max size: 1mb</small>
+              <small className='text-muted mr-4'>Max size: 1mb</small>
               <label className='btn btn-outline-info'>
                 Upload featured image
                 <input onChange={handleChange('photo')} type='file' accept='image/*' hidden />
