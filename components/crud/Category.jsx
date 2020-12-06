@@ -24,7 +24,7 @@ const Category = () => {
   const loadCategories = () => {
     getCategories().then((data) => {
       if (data.error) {
-        console.log(data.error);
+        // console.log(data.error);
       } else {
         setValues({ ...values, categories: data });
       }
@@ -52,7 +52,7 @@ const Category = () => {
     // console.log('delete', slug);
     removeCategory(slug, token).then((data) => {
       if (data.error) {
-        console.log(data.error);
+        // console.log(data.error);
       } else {
         setValues({ ...values, error: false, success: false, name: '', removed: !removed, reload: !reload });
       }
