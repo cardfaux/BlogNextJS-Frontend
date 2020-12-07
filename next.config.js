@@ -13,5 +13,6 @@ module.exports = {
     FB_APP_ID: process.env.FB_APP_ID,
     DOMAIN_PRODUCTION: process.env.DOMAIN_PRODUCTION,
     DOMAIN_DEVELOPMENT: process.env.DOMAIN_DEVELOPMENT,
+    DISQUS_SHORTNAME: process.env.DISQUS_SHORTNAME,
   },
 };
