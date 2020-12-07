@@ -1,4 +1,5 @@
-/* eslint-disable prefer-const */
+/* eslint-disable spaced-comment */
+/* eslint-disable camelcase */
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
@@ -9,6 +10,7 @@ import { API } from '../../config';
 const ProfileUpdate = () => {
   const [values, setValues] = useState({
     username: '',
+    username_for_photo: '',
     name: '',
     email: '',
     about: '',
@@ -17,11 +19,11 @@ const ProfileUpdate = () => {
     success: false,
     loading: false,
     photo: '',
-    userData: '',
+    userData: process.browser && new FormData(),
   });
 
   const token = getCookie('token');
-  const { username, name, email, about, password, error, success, loading, photo, userData } = values;
+  const { username, username_for_photo, name, email, about, password, error, success, loading, photo, userData } = values;
 
   const init = () => {
     getProfile(token).then((data) => {
@@ -31,6 +33,7 @@ const ProfileUpdate = () => {
         setValues({
           ...values,
           username: data.username,
+          username_for_photo: data.username,
           name: data.name,
           email: data.email,
           about: data.about,
@@ -41,22 +44,26 @@ const ProfileUpdate = () => {
 
   useEffect(() => {
     init();
+    setValues({ ...values, userData: new FormData() });
   }, []);
 
   const handleChange = (name) => (e) => {
     // console.log(e.target.value);
     const value = name === 'photo' ? e.target.files[0] : e.target.value;
-    let userFormData = new FormData();
-    userFormData.set(name, value);
-    setValues({ ...values, [name]: value, userData: userFormData, error: false, success: false });
+    // let userData = new FormData();
+    userData.set(name, value);
+    console.log(...userData); // SEE THE FORMDATA IN CONSOLE
+    setValues({ ...values, [name]: value, userData, error: false, success: false });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setValues({ ...values, loading: true });
     update(token, userData).then((data) => {
       if (data.error) {
-        setValues({ ...values, error: data.error, success: false, loading: false });
+        console.log('data.error', data.error);
+        setValues({ ...values, error: data.error, loading: false });
       } else {
         updateUser(data, () => {
           setValues({
@@ -90,10 +97,10 @@ const ProfileUpdate = () => {
         <label className='text-muted'>Name</label>
         <input onChange={handleChange('name')} type='text' value={name} className='form-control' />
       </div>
-      <div className='form-group'>
-        <label className='text-muted'>Email</label>
-        <input onChange={handleChange('email')} type='text' value={email} className='form-control' />
-      </div>
+      {/*<div className="form-group">
+                <label className="text-muted">Email</label>
+                <input onChange={handleChange('email')} type="text" value={email} className="form-control" />
+            </div>*/}
       <div className='form-group'>
         <label className='text-muted'>About</label>
         <textarea onChange={handleChange('about')} type='text' value={about} className='form-control' />
@@ -103,8 +110,13 @@ const ProfileUpdate = () => {
         <input onChange={handleChange('password')} type='password' value={password} className='form-control' />
       </div>
       <div>
-        <button type='submit' className='btn btn-primary'>
-          Submit
+        {showSuccess()}
+        {showError()}
+        {showLoading()}
+      </div>
+      <div>
+        <button type='submit' className='btn btn-primary' disabled={!username || !name || !email}>
+          Update
         </button>
       </div>
     </form>
@@ -133,14 +145,9 @@ const ProfileUpdate = () => {
       <div className='container'>
         <div className='row'>
           <div className='col-md-4'>
-            <img src={`${API}/user/photo/${username}`} className='img img-fluid img-thumbnail mb-3' style={{ maxHeight: 'auto', maxWidth: '100%' }} alt='user profile' />
+            <img src={`${API}/user/photo/${username_for_photo}`} className='img img-fluid img-thumbnail mb-3' style={{ maxHeight: 'auto', maxWidth: '100%' }} alt='user profile' />
           </div>
-          <div className='col-md-8 mb-5'>
-            {showSuccess()}
-            {showError()}
-            {showLoading()}
-            {profileUpdateForm()}
-          </div>
+          <div className='col-md-8 mb-5'>{profileUpdateForm()}</div>
         </div>
       </div>
     </React.Fragment>
