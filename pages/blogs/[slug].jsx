@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../../components/shared/Layout';
@@ -6,6 +7,7 @@ import { singleBlog, listRelated } from '../../actions/blog';
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
 import renderHTML from 'react-render-html';
 import moment from 'moment';
+import { FacebookShareButton, FacebookIcon } from 'react-share';
 
 import DisqusThread from '../../components/shared/DisqusThread';
 import SmallCard from '../../components/blog/SmallCard';
@@ -79,6 +81,14 @@ const SingleBlog = ({ blog, query }) => {
     );
   };
 
+  const socialMediaButtons = () => {
+    return (
+      <FacebookShareButton url={`${DOMAIN}/blogs/${query.slug}`} quote={`${blog.title}| ${APP_NAME}`} hashtag='#jameshagood' className='socialMediaButtons'>
+        <FacebookIcon size={36} />
+      </FacebookShareButton>
+    );
+  };
+
   return (
     <React.Fragment>
       {head()}
@@ -95,6 +105,8 @@ const SingleBlog = ({ blog, query }) => {
               <section>
                 <div className='container'>
                   <h1 className='display-2 pb-3 pt-3 text-center font-weight-bold'>{blog.title}</h1>
+                  <div className='social-media-buttons'>{socialMediaButtons()}</div>
+
                   <p className='lead mt-3 mark'>
                     Written by{' '}
                     <Link href={`/profile/${blog.postedBy.username}`}>
