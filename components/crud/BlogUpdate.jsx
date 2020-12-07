@@ -179,6 +179,9 @@ const BlogUpdate = ({ router }) => {
 
   const editBlog = (e) => {
     e.preventDefault();
+    let formData = new FormData();
+    formData.append('title', values.title);
+    formData.append('body', body);
     updateBlog(formData, token, router.query.slug).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error });
