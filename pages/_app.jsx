@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
+import ChatComponent from '../components/shared/ChatComponent';
 import '../node_modules/nprogress/nprogress.css';
 import '../styles/globalStyles.css';
 
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css' />
       </Head>
       <Component {...pageProps} />
+      <ChatComponent />
     </>
   );
 }
