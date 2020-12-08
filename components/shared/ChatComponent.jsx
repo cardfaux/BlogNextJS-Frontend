@@ -24,7 +24,7 @@ const ChatComponent = () => {
 
 const StyledChatDiv = styled.section`
   position: absolute;
-  top: 50%;
+  top: calc(100% - 300px);
   right: 0;
   height: 300px;
   border-radius: 10px;
@@ -42,13 +42,16 @@ const StyledHeaderContainer = styled.div`
 `;
 
 const StyledHeaderMessage = styled.p`
-  padding: 0 80px;
+  padding: 0 70px;
   font-size: 20px;
   color: white;
 `;
 
 const StyledCloseContainer = styled.div`
   margin-right: 8px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const StyledInputWrapper = styled.div`
