@@ -75,19 +75,18 @@ const UserProfile = ({ user, blogs, query }) => {
           <div className='row'>
             <div className='col-md-6'>
               <div className='card'>
-                <div className='card-body'>
-                  <h5 className='card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-white'>Recent blogs by {user.name}</h5>
-
-                  {showUserBlogs()}
-                </div>
+                {/* <div className='card-body'> */}
+                <h5 className='card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-white'>Recent blogs by {user.name}</h5>
+                <div className='card-body'>{showUserBlogs()}</div>
               </div>
             </div>
 
             <div className='col-md-6'>
               <div className='card'>
+                {/* <div className='card-body'> */}
+                <h5 className='card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-light'>Message {user.name}</h5>
+                <br />
                 <div className='card-body'>
-                  <h5 className='card-title bg-primary pt-4 pb-4 pl-4 pr-4 text-light'>Message {user.name}</h5>
-                  <br />
                   <ContactForm authorEmail={user.email} />
                 </div>
               </div>

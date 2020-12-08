@@ -66,18 +66,20 @@ const ContactForm = ({ authorEmail }) => {
         </div>
 
         <div>
-          <button className='btn btn-primary'>{buttonText}</button>
+          <button className='btn btn-primary' style={{ width: '100%' }}>
+            {buttonText}
+          </button>
         </div>
       </form>
     );
   };
 
   return (
-    <React.Fragment>
+    <>
       {showSuccessMessage()}
       {showErrorMessage()}
       {contactForm()}
-    </React.Fragment>
+    </>
   );
 };
 
