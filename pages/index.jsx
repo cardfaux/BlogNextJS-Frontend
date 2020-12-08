@@ -30,7 +30,7 @@ const Index = () => {
                 <div
                   className='front'
                   style={{
-                    backgroundImage: 'url(' + 'https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg' + ')',
+                    backgroundImage: 'url(' + '/images/index-image.jpeg' + ')',
                   }}
                 >
                   <h2 className='text-shadow text-center h1'>React</h2>
@@ -51,7 +51,7 @@ const Index = () => {
                 <div
                   className='front'
                   style={{
-                    backgroundImage: 'url(' + 'https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg' + ')',
+                    backgroundImage: 'url(' + '/images/index-image.jpeg' + ')',
                   }}
                 >
                   <h2 className='text-shadow text-center h1'>Node</h2>
@@ -72,7 +72,7 @@ const Index = () => {
                 <div
                   className='front'
                   style={{
-                    backgroundImage: 'url(' + 'https://images.pexels.com/photos/540518/pexels-photo-540518.jpeg' + ')',
+                    backgroundImage: 'url(' + '/images/index-image.jpeg' + ')',
                   }}
                 >
                   <h2 className='text-shadow text-center h1'>Next</h2>
