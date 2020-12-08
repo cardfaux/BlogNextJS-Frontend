@@ -14,5 +14,6 @@ module.exports = {
     DOMAIN_PRODUCTION: process.env.DOMAIN_PRODUCTION,
     DOMAIN_DEVELOPMENT: process.env.DOMAIN_DEVELOPMENT,
     DISQUS_SHORTNAME: process.env.DISQUS_SHORTNAME,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   },
 };
