@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
-import GoogleLogin from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 import { loginWithGoogle, authenticate, isAuth } from '../../actions/auth';
 import { GOOGLE_CLIENT_ID } from '../../config';
 
@@ -27,7 +27,7 @@ const LoginGoogle = () => {
   };
 
   return (
-    <div className='pb-3'>
+    <div className='pb-3 custom-google-button'>
       <GoogleLogin clientId={`${GOOGLE_CLIENT_ID}`} buttonText='Login with Google' onSuccess={responseGoogle} onFailure={responseGoogle} theme='dark' />
     </div>
   );

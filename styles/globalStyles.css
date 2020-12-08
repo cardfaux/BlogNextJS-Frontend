@@ -99,3 +99,12 @@ nav.navbar.navbar-expand-md.navbar-light.bg-light a.font-weight-bold.nav-link {
     11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04),
     16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
 }
+
+div.pb-3.custom-google-button button {
+  width: 100%;
+  justify-content: center;
+}
+
+div.pb-3.custom-google-button button div {
+  background-color: rgba(5, 5, 6, 1) !important;
+}
