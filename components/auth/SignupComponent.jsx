@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { signup, isAuth } from '../../actions/auth';
 import Router from 'next/router';
+import Link from 'next/link';
 
 const SignupComponent = () => {
   const [values, setValues] = useState({
@@ -68,7 +69,9 @@ const SignupComponent = () => {
         </div>
 
         <div>
-          <button className='btn btn-primary'>Signup</button>
+          <button style={{ width: '100%' }} className='btn btn-primary mb-4'>
+            Signup
+          </button>
         </div>
       </form>
     );
@@ -80,6 +83,11 @@ const SignupComponent = () => {
       {showLoading()}
       {showMessage()}
       {showForm && signupForm()}
+      <Link href='/auth/password/forgot'>
+        <a style={{ width: '100%' }} className='btn btn-outline-danger btn-sm'>
+          Forgot password
+        </a>
+      </Link>
     </>
   );
 };
