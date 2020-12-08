@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { signin, authenticate, isAuth } from '../../actions/auth';
 import Router from 'next/router';
+import Link from 'next/link';
 
 const SigninComponent = () => {
   const [values, setValues] = useState({
@@ -64,7 +65,9 @@ const SigninComponent = () => {
         </div>
 
         <div>
-          <button className='btn btn-primary'>Signin</button>
+          <button style={{ width: '100%' }} className='btn btn-primary mb-4'>
+            Signin
+          </button>
         </div>
       </form>
     );
@@ -76,6 +79,11 @@ const SigninComponent = () => {
       {showLoading()}
       {showMessage()}
       {showForm && signinForm()}
+      <Link href='/auth/password/forgot'>
+        <a style={{ width: '100%' }} className='btn btn-outline-danger btn-sm'>
+          Forgot password
+        </a>
+      </Link>
     </>
   );
 };
