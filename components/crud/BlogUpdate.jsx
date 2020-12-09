@@ -23,10 +23,10 @@ const BlogUpdate = ({ router }) => {
   const [checkedTag, setCheckedTag] = useState([]); // tags
 
   const [values, setValues] = useState({
-    title: '',
     error: '',
     success: '',
     formData: '',
+    title: '',
     body: '',
   });
 
@@ -168,7 +168,7 @@ const BlogUpdate = ({ router }) => {
   const handleChange = (name) => (e) => {
     // console.log(e.target.value);
     const value = name === 'photo' ? e.target.files[0] : e.target.value;
-    // formData.set(name, value);
+    formData.set(name, value);
     setValues({ ...values, [name]: value, formData, error: '' });
   };
 
@@ -179,9 +179,6 @@ const BlogUpdate = ({ router }) => {
 
   const editBlog = (e) => {
     e.preventDefault();
-    let formData = new FormData();
-    formData.append('title', values.title);
-    formData.append('body', body);
     updateBlog(formData, token, router.query.slug).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error });
