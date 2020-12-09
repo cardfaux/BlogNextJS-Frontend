@@ -1,5 +1,6 @@
 /* eslint-disable prefer-const */
 import fetch from 'isomorphic-fetch';
+import openSocket from 'socket.io-client';
 import { API } from '../config';
 import queryString from 'query-string';
 import { isAuth, handleResponse } from './auth';

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-import openSocket from 'socket.io-client';
 import Router from 'next/router';
 import { getCookie, isAuth } from '../../actions/auth';
 import { list, removeBlog } from '../../actions/blog';

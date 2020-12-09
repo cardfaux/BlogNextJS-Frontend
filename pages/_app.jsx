@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css' />
       </Head>
       <Component {...pageProps} />
-      <ChatComponent />
+      {/* <ChatComponent /> */}
     </>
   );
 }
