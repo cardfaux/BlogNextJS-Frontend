@@ -1,26 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 
-const ChatComponent = () => {
+const ChatComponent = (props) => {
+  const [flipped, set] = useState(false);
+  const springProps = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const { transform, opacity } = useSpring({
+    opacity: flipped ? 1 : 1,
+    // transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg) translateX(${flipped ? 100 : 0}%)`,
+    transform: `translateX(${flipped ? 100 : 0}%)`,
+    config: { mass: 5, tension: 500, friction: 80 },
+  });
+
   return (
     <>
-      <StyledChatDiv>
+      <AnimatedChatBox style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(0deg) translateX(0%)`) }}>
         <StyledHeader>
           <StyledHeaderContainer>
             <StyledHeaderMessage>Chat Component</StyledHeaderMessage>
-            <StyledCloseContainer>🦄</StyledCloseContainer>
+            <StyledCloseContainer onClick={() => set((state) => !state)}>🦄</StyledCloseContainer>
           </StyledHeaderContainer>
         </StyledHeader>
         <StyledInputWrapper className='input-group'>
           <input type='text' className='form-control' placeholder='Message' aria-label='Message with two button addons' />
-          <button className='btn btn-outline-secondary' type='button'>
+          <AnimatedButton style={springProps} className='btn btn-outline-secondary' type='button'>
             Send
-          </button>
+          </AnimatedButton>
         </StyledInputWrapper>
-      </StyledChatDiv>
+      </AnimatedChatBox>
     </>
   );
 };
+
+const AnimatedButton = styled(animated.button)`
+  color: purple;
+`;
+
+const AnimatedChatBox = styled(animated.div)`
+  position: absolute;
+  top: calc(100% - 300px);
+  right: 0;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(60, 60, 60, 1);
+`;
 
 const StyledChatDiv = styled.section`
   position: absolute;
